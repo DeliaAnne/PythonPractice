@@ -1,4 +1,4 @@
-#   Print where the pulses are found without including piggybacks
+#   Print where the pulses are found without including transitive pulses
 #   print the area under the pulse(use the un-smoothed data)
 
 import sys
@@ -77,7 +77,7 @@ class pulseReader:
             self.data2.append( int ((( (self.data[y-3]) + (2 * self.data[y-2]) + (3 * self.data[y-1]) + (3 * self.data[y]) 
                         + (3 * self.data[y+1]) + (2 * self.data[y+2]) + (self.data[y+3]) ) //15)))
 
-    # Find the pulses, and then weed out the piggy back pulses
+    # Find the pulses, and then weed out the transitive pulses
     def processPulses(self):
         z = 0
         while (z+2 < len(self.data2) ):
